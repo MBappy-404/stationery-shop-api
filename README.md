@@ -74,7 +74,7 @@ This application uses **Mongoose** for object data modeling (ODM) to handle inte
 
 ## Project Setup
 
-### Prerequisites
+### Installation
 
 - express
 - typescript
@@ -84,7 +84,7 @@ This application uses **Mongoose** for object data modeling (ODM) to handle inte
 - vercel
 - eslint
 
-### Installation
+### Links
 
 Steps to get the project running locally:
 

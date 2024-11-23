@@ -8,22 +8,27 @@ const createOrder = async (req: Request, res: Response) => {
 
     // Check if product exists
     const product = await Product.findById(productId)
+
     if (!product) {
-      return res.status(400).json({
+      res.status(400).json({
         message: 'Product not found',
       })
+
+      return
     }
 
     // Validate stock availability
-    if (product?.quantity < quantity) {
-      return res.status(400).json({
+    if (product.quantity < quantity) {
+      res.status(400).json({
         message: 'Opps! Product not in stock at the moment.',
       })
+
+      return
     }
 
     // calculate total price
     const totalPrice = product.price * quantity
-    const order = {...req.body, totalPrice}
+    const order = { ...req.body, totalPrice }
 
     // Create order
     const result = await OrderService.createOrder(order)
@@ -45,14 +50,14 @@ const createOrder = async (req: Request, res: Response) => {
     }
 
     // Send success response
-    return res.status(200).json({
+    res.status(200).json({
       success: true,
       message: 'Order created successfully',
       data: result,
     })
   } catch (error: any) {
     // Handle errors
-    return res.status(404).json({
+    res.status(404).json({
       success: false,
       message: error.message || 'An unexpected error occurred',
       error: error,
@@ -64,14 +69,15 @@ const createOrder = async (req: Request, res: Response) => {
 const calculateRevenue = async (req: Request, res: Response) => {
   try {
     const result = await OrderService.calculateRevenueOrders()
-    return res.status(200).json({
+
+    res.status(200).json({
       success: true,
       message: 'Revenue calculated successfully',
       data: result[0],
     })
   } catch (error: any) {
     // Handle errors
-    return res.status(404).json({
+    res.status(404).json({
       success: false,
       message: error.message || 'An unexpected error occurred',
       error: error,
