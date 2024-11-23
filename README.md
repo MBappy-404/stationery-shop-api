@@ -3,9 +3,12 @@
 
 ## Overview
 
-The **Stationery Shop API** is a full-stack application that manages a stationery store's products and orders. It allows customers to place orders, manage inventory, and calculate revenue from all orders. The API is built using **Node.js**, **Express**, **MongoDB**, and **TypeScript**.
+ 
 
-This application uses Mongoose for object data modeling (ODM) to handle interactions with the MongoDB database. The API exposes endpoints for managing products, placing orders, and calculating revenue from all orders. It is designed to handle the sale of various stationery items such as notebooks, pens, and other office supplies.
+The **Stationery Shop API** is a server-side application that provides an API for managing a stationery store's products and orders. It allows the management of inventory, placing orders, and calculating revenue from all orders. The API is built using **Node.js**, **Express**, **MongoDB**, and **TypeScript**.
+
+This application uses **Mongoose** for object data modeling (ODM) to handle interactions with the MongoDB database. The API exposes endpoints for managing products, placing orders, and calculating revenue from all orders. It is designed to serve as the backend for a stationery shop, handling the sale of various stationery items such as notebooks, pens, and other office supplies.
+
 ---
 
 ## Key Features
