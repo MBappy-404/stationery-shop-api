@@ -12,12 +12,12 @@ const createOrder = async (payload: IOrder) => {
 const calculateRevenueOrders = async () => {
   const result = await Order.aggregate([
     {
-      $group: { _id: null, totalPrice: { $sum: '$totalPrice' } },
+      $group: { _id: null, totalRevenue: { $sum: '$totalPrice' } },
     },
     {
       $project: {
         _id: 0,
-        totalPrice: 1,
+        totalRevenue: 1,
       },
     },
   ])

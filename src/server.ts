@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import app from "./app";
 import config from "./config";
 
- 
+//  dev-stationery-shop server 
  async function server(){
     try {
         // connect to database 
