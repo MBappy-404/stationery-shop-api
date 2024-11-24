@@ -93,4 +93,4 @@ Steps to get the project running locally:
    git clone https://github.com/MBappy-404/stationery-shop-api
 
 2. Access the live API 
-   link -> https://stationery-shop-dev.vercel.app/
+   link -> https://dev-stationery-shop.vercel.app
